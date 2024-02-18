@@ -1,0 +1,114 @@
+# Competition YAML file : general challenge defition and settings
+title: Code-Mixed Sentiment
+admin_names: admin1, admin2
+allow_public_submissions: true
+allow_teams: false
+anonymous_leaderboard: false
+description: Testing for the 
+start_date: 2020-01-01 00:00:00+00:00
+# competition_docker_image: 'codalab/codalab-legacy:py37'
+# disallow_leaderboard_modifying: true
+enable_detailed_results: true
+enable_forum: true
+# enable_per_submission_metadata: false
+# end_date: null
+force_submission_to_leaderboard: true
+has_registration: false
+show_datasets_from_yaml: true
+
+# Documentation pages
+html:
+  data: data.html
+  evaluation: evaluation.html
+  overview: overview.html
+  terms: terms.html
+image: logo.png
+
+# Phases
+phases:
+  # Development
+  1:
+    color: blue
+    description: 'TRACK 1 (Bangla Code-Mixed): Submit the bangla prediction along with the ids here'
+    execution_time_limit: 500
+    is_scoring_only: false
+    label: bangla_code_mixed
+    max_submissions: 100
+    max_submissions_per_day: 15
+    phasenumber: 1
+    reference_data: bangla.csv.zip
+    scoring_program: scoring_program.zip
+    start_date: 2020-01-15 # YYYY-MM-DD
+    phase_never_ends: true
+
+
+  ## OTHER TASKS CAN BE ADDED AS PHASESS 
+  # Final
+  2:
+    color: blue
+    description: 'TRACK 1 (Hindi Code-Mixed): Submit the hindi prediction along with the ids here'
+    execution_time_limit: 500
+    is_scoring_only: false
+    label: hindi_code_mixed
+    max_submissions: 100
+    max_submissions_per_day: 15
+    phasenumber: 2
+    reference_data: hindi.csv.zip
+    scoring_program: scoring_program.zip
+    start_date: 2020-01-15 # YYYY-MM-DD
+    phase_never_ends: true
+
+  3:
+    color: blue
+    description: 'TRACK 1 (Maghi Code-Mixed): Submit the hindi prediction along with the ids here'
+    execution_time_limit: 500
+    is_scoring_only: false
+    label: maghi_code_mixed
+    max_submissions: 100
+    max_submissions_per_day: 15
+    phasenumber: 3
+    reference_data: maghi.csv.zip
+    scoring_program: scoring_program.zip
+    start_date: 2020-01-15 # YYYY-MM-DD
+    phase_never_ends: true
+
+  4:
+    color: blue
+    description: 'TRACK 1 (Combined Predictions): Submit predictions for the combined test set along with the ids here'
+    execution_time_limit: 500
+    is_scoring_only: false
+    label: combined_code_mixed
+    max_submissions: 100
+    max_submissions_per_day: 15
+    phasenumber: 4
+    reference_data: combined.csv.zip
+    scoring_program: scoring_program.zip
+    start_date: 2020-01-15 # YYYY-MM-DD
+    phase_never_ends: true
+
+
+# Leaderboard
+leaderboard:
+  leaderboards:
+    Results: &RESULTS
+        label: Results
+        rank: 1
+
+  columns:
+    f1_macro:
+      label: Macro-Averaged F1
+      leaderboard: *RESULTS
+      numeric_format: 2
+      rank: 1
+    precision_macro:
+      label: Macro-Averaged Precision
+      leaderboard: *RESULTS
+      numeric_format: 2
+      rank: 2
+    recall_macro:
+      label: Macro-Averaged Recall
+      leaderboard: *RESULTS
+      numeric_format: 2
+      rank: 3
+
+# Extend to have more columns i.e. macro_f1, macro_precision, macro_recall
