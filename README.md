@@ -41,7 +41,8 @@ The evaluation will be in two different Tracks:
 <p align="justify"> **NB!** The dataset are divided into the train, validation and test sets with the ratio of 70:15:15. However, for the fourth part of Track 1 (Combined all the language pairs), combine the provided training and validation dataset of each code-mixed language to train the model. </p>
 
 ## System Submission Format
-We will ask the participants to submit their predictions in a specified format on [CodaLab](https://codalab.lisn.upsaclay.fr/). 
+The participants are requested to submit their predictions on [CodaLab](https://codalab.lisn.upsaclay.fr/). 
+
 
 
 ## Paper submission 
